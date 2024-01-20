@@ -1,4 +1,10 @@
 {
   "@@locale": "en",
-  "noRoute": "No Route founded for : "
+  "aboutTheHotel": "About the hotel",
+  "essentials": "Essentials",
+  "facilities": "Facilities",
+  "hotel": "Hotel",
+  "toSelectANumber": "To select a number",
+  "whatsIncluded": "What's included",
+  "whatsNotIncluded": "What's not included"
 }

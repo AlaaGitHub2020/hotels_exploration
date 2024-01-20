@@ -6,10 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hotels_exploration/domain/api/i_api_repository.dart';
 import 'package:hotels_exploration/domain/core/utilities/logger/simple_log_printer.dart';
-import 'package:hotels_exploration/domain/models/hotel/i_hotel_repository.dart';
-import 'package:hotels_exploration/domain/models/reservation/i_reservation_repository.dart';
-import 'package:hotels_exploration/domain/models/room/i_rooms_repository.dart';
 import 'package:hotels_exploration/injection.dart';
+import 'package:hotels_exploration/views/core/hotels_exploration_app_widget.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
 
@@ -22,10 +20,7 @@ void main() {
         widgetsBinding: WidgetsFlutterBinding.ensureInitialized(),
       );
       await appConfiguration();
-
-      await getIt<IHotelRepository>().fetchHotelData();
-      await getIt<IRoomsRepository>().fetchRoomsList();
-      await getIt<IReservationRepository>().fetchReservationData();
+      runApp(const HotelsExplorationAppWidget());
     },
     (Object error, StackTrace stack) {
       getLogger().e('‍⛔[CrashEvent] [DEBUG] $error\n$stack');

@@ -15,4 +15,11 @@ class InfrastructureConstants {
 }
 
 ///Constants used in the Views layer
-class ViewsConstants {}
+class ViewsConstants {
+  static const String appTitle = 'Hotels Exploration';
+  static const String icFacilities = 'assets/icons/ic_facilities.svg';
+  static const String icWhatsIncluded = 'assets/icons/ic_whats_included.svg';
+  static const String icWhatsNotIncluded =
+      'assets/icons/ic_whats_not_included.svg';
+  static const String icForward = 'assets/icons/ic_forward.svg';
+}
