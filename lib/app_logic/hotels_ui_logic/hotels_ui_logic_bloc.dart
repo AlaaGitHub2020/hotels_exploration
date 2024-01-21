@@ -30,9 +30,9 @@ class HotelsUiLogicBloc extends Bloc<HotelsUiLogicEvent, HotelsUiLogicState> {
             (ModelsFailure failure) {
               return HotelsUiLogicState.actionFailure(failure);
             },
-            (HotelModel success) {
+            (HotelModel hotelModel) {
               return HotelsUiLogicState.actionSuccess(
-                success,
+                hotelModel,
                 controller: _controller,
                 currentIndex: 0,
               );

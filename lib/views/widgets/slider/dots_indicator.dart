@@ -11,8 +11,13 @@ class DotsIndicator extends StatelessWidget {
       required this.imgList,
       super.key});
 
-  final int currentIndex;
+  ///Carousel Controller
   final CarouselController controller;
+
+  ///current Index
+  final int currentIndex;
+
+  ///images List
   final List<String?> imgList;
 
   @override

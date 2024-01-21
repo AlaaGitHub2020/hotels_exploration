@@ -10,7 +10,9 @@
   "from": "From",
   "hotel": "Hotel",
   "loadingImageError": "Loading image error!",
+  "moreDetailsAboutTheRoom": "More details about the room",
   "retryAgain": "Retry again",
+  "selectRoom": "Select room",
   "toSelectANumber": "To select a number",
   "whatsIncluded": "What's included",
   "whatsNotIncluded": "What's not included"

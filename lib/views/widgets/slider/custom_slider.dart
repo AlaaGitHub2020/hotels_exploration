@@ -1,23 +1,23 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:hotels_exploration/views/widgets/image_card.dart';
-import 'package:hotels_exploration/views/widgets/loading_image_error.dart';
+import 'package:hotels_exploration/views/widgets/slider/image_card.dart';
+import 'package:hotels_exploration/views/widgets/slider/loading_image_error.dart';
 
-///Image Slider
-class ImageSlider extends StatelessWidget {
+/// Slider
+class CustomSlider extends StatelessWidget {
   ///Constructor
-  const ImageSlider({
+  const CustomSlider({
     required this.controller,
     required this.imageList,
     required this.onPageChanged,
     super.key,
   });
 
-  ///Images List
-  final List<String?> imageList;
-
   /// controller
   final CarouselController? controller;
+
+  ///Images List
+  final List<String?> imageList;
 
   ///onPageChanged Function
   final Function(int, CarouselPageChangedReason)? onPageChanged;

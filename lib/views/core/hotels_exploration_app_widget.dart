@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hotels_exploration/app_logic/hotels_ui_logic/hotels_ui_logic_bloc.dart';
+import 'package:hotels_exploration/app_logic/rooms_ui_logic/rooms_ui_logic_bloc.dart';
 import 'package:hotels_exploration/injection.dart';
 import 'package:hotels_exploration/views/core/hotels_exploration_application.dart';
 
@@ -13,9 +14,11 @@ class HotelsExplorationAppWidget extends StatelessWidget {
   Widget build(BuildContext context) => MultiBlocProvider(
         providers: [
           BlocProvider<HotelsUiLogicBloc>(
-            create: (BuildContext context) => getIt<HotelsUiLogicBloc>()
-              ..add(HotelsUiLogicEvent.getHotelData()),
+            create: (_) => getIt<HotelsUiLogicBloc>()
+              ..add(const HotelsUiLogicEvent.getHotelData()),
           ),
+          BlocProvider<RoomsUiLogicBloc>(
+              create: (_) => getIt<RoomsUiLogicBloc>()),
         ],
         child: const HotelsExplorationApplication(),
       );

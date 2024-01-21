@@ -10,7 +10,9 @@
   "from": "от",
   "hotel": "Отель",
   "loadingImageError": "ошибка загрузки изображения!",
+  "moreDetailsAboutTheRoom": "Подробнее о номере",
   "retryAgain": "Повторите попытку еще раз",
+  "selectRoom": "Выбрать номер",
   "toSelectANumber": "К выбору номера",
   "whatsIncluded": "Что включено",
   "whatsNotIncluded": "Что не включено"
