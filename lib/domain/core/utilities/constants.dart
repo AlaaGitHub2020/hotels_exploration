@@ -22,4 +22,5 @@ class ViewsConstants {
   static const String icWhatsNotIncluded =
       'assets/icons/ic_whats_not_included.svg';
   static const String icForward = 'assets/icons/ic_forward.svg';
+  static const String icError = 'assets/icons/ic_error.svg';
 }

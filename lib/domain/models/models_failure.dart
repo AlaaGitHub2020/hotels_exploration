@@ -10,6 +10,6 @@ abstract class ModelsFailure with _$ModelsFailure {
 
   const factory ModelsFailure.fetchRoomsListFailure() = _FetchRoomsListFailure;
 
-  const factory ModelsFailure.fetchReservationFailureDataFailure() =
-      _FetchReservationFailureDataFailure;
+  const factory ModelsFailure.fetchReservationDataFailure() =
+      _FetchReservationDataFailure;
 }

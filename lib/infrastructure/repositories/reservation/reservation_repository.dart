@@ -32,13 +32,13 @@ class ReservationRepository implements IReservationRepository {
         reservationModel = ReservationModel.fromJson(decodedResponse);
       });
       if (reservationModel == null) {
-        return left(const ModelsFailure.fetchReservationFailureDataFailure());
+        return left(const ModelsFailure.fetchReservationDataFailure());
       } else {
         return right(reservationModel!);
       }
     } on Exception catch (error) {
       getLogger().e('Exception Error: $error');
-      return left(const ModelsFailure.fetchReservationFailureDataFailure());
+      return left(const ModelsFailure.fetchReservationDataFailure());
     }
   }
 }

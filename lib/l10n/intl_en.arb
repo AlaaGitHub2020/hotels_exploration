@@ -1,9 +1,16 @@
 {
   "@@locale": "en",
   "aboutTheHotel": "About the hotel",
+  "errorFetchingDataFromAPI": "Error fetching data from API",
+  "errorFetchHotelDataFailure": "Error: Fetching hotel data failure!",
+  "errorFetchReservationDataFailure": "Error: Fetching reservation data failure!",
+  "errorFetchRoomsListFailure": "Error: Fetching rooms list failure!",
   "essentials": "Essentials",
   "facilities": "Facilities",
+  "from": "From",
   "hotel": "Hotel",
+  "loadingImageError": "Loading image error!",
+  "retryAgain": "Retry again",
   "toSelectANumber": "To select a number",
   "whatsIncluded": "What's included",
   "whatsNotIncluded": "What's not included"

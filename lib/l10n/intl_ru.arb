@@ -1,9 +1,16 @@
 {
   "@@locale": "ru",
   "aboutTheHotel": "Об отеле",
+  "errorFetchingDataFromAPI": "Ошибка при извлечении данных из API",
+  "errorFetchHotelDataFailure": "Ошибка: Сбой при извлечении данных отеля!",
+  "errorFetchReservationDataFailure": "Ошибка: Сбой при извлечении данных резервирования!",
+  "errorFetchRoomsListFailure": "Ошибка: Сбой при выборке списка комнат!",
   "essentials": "Самое необходимое",
   "facilities": "Удобства",
+  "from": "от",
   "hotel": "Отель",
+  "loadingImageError": "ошибка загрузки изображения!",
+  "retryAgain": "Повторите попытку еще раз",
   "toSelectANumber": "К выбору номера",
   "whatsIncluded": "Что включено",
   "whatsNotIncluded": "Что не включено"

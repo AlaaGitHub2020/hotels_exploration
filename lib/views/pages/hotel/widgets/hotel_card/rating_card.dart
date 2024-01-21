@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hotels_exploration/app_logic/hotels_ui_logic/hotels_ui_logic_bloc.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
+import 'package:hotels_exploration/domain/models/hotel/hotel_model.dart';
 
 ///Rating Card
 class RatingCard extends StatelessWidget {
@@ -18,7 +21,7 @@ class RatingCard extends StatelessWidget {
             Icon(Icons.star,
                 size: 15, color: Theme.of(context).color.secondText),
             SizedBox(width: 4),
-            buildRatingText(context),
+            buildRatingText(),
           ],
         ),
       );
@@ -30,13 +33,22 @@ class RatingCard extends StatelessWidget {
       );
 
   ///Rating Text
-  Expanded buildRatingText(BuildContext context) => Expanded(
-        child: Text('5 Превосходно ',
-            overflow: TextOverflow.ellipsis,
-            softWrap: true,
-            style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  fontSize: 16,
-                  color: Theme.of(context).color.secondText,
-                )),
+  BlocBuilder<HotelsUiLogicBloc, HotelsUiLogicState> buildRatingText() =>
+      BlocBuilder<HotelsUiLogicBloc, HotelsUiLogicState>(
+        builder:
+            (BuildContext context, HotelsUiLogicState hotelsUiLogicState) =>
+                hotelsUiLogicState.maybeWhen(
+          orElse: Container.new,
+          actionSuccess: (HotelModel hotelModel, _, __) => Expanded(
+            child: Text(
+                '${hotelModel.rating ?? ''} ${hotelModel.ratingName ?? ''}',
+                overflow: TextOverflow.ellipsis,
+                softWrap: true,
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      fontSize: 16,
+                      color: Theme.of(context).color.secondText,
+                    )),
+          ),
+        ),
       );
 }

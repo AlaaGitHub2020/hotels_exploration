@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
 import 'package:hotels_exploration/generated/l10n.dart';
+import 'package:hotels_exploration/views/routes/router.gr.dart';
 
 ///To Select Number Card Button
 class ToSelectNumberCard extends StatelessWidget {
@@ -20,7 +22,9 @@ class ToSelectNumberCard extends StatelessWidget {
 
   ///Button
   ElevatedButton buildBtn(BuildContext context) => ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          context.router.push(RoomRoute());
+        },
         child: buildToSelectANumberText(context),
       );
 

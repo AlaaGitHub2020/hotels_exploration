@@ -13,7 +13,7 @@ class DotsIndicator extends StatelessWidget {
 
   final int currentIndex;
   final CarouselController controller;
-  final List<String> imgList;
+  final List<String?> imgList;
 
   @override
   Widget build(BuildContext context) => Container(

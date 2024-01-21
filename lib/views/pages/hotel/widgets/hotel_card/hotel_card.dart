@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
 import 'package:hotels_exploration/views/pages/hotel/widgets/hotel_card/hotel_data.dart';
+import 'package:hotels_exploration/views/pages/hotel/widgets/hotel_card/hotel_image_slider.dart';
 import 'package:hotels_exploration/views/pages/hotel/widgets/hotel_card/hotel_text.dart';
-import 'package:hotels_exploration/views/pages/hotel/widgets/hotel_card/images_slider.dart';
 
 ///Hotel Card
 class HotelCard extends StatelessWidget {
@@ -23,7 +23,7 @@ class HotelCard extends StatelessWidget {
               SizedBox(height: 20),
               HotelText(),
               SizedBox(height: 20),
-              ImagesSlider(),
+              HotelImageSlider(),
               HotelData(),
             ],
           ),
