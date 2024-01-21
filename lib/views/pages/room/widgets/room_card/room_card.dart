@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
-import 'package:hotels_exploration/generated/l10n.dart';
 import 'package:hotels_exploration/views/pages/room/widgets/room_card/room_details.dart';
+import 'package:hotels_exploration/views/pages/room/widgets/room_card/select_room_btn.dart';
 
 ///Room Card
 class RoomCard extends StatelessWidget {
@@ -59,7 +59,7 @@ class RoomCard extends StatelessWidget {
               const SizedBox(height: 20),
               buildRoomDetails(),
               const SizedBox(height: 10),
-              buildSelectRoomBtn(context),
+              SelectRoomBtn(onPressSelectRoom: onPressSelectRoom),
               const SizedBox(height: 20),
             ],
           ),
@@ -77,20 +77,6 @@ class RoomCard extends StatelessWidget {
         roomPeculiarities: roomPeculiarities,
         onPageChanged: onPageChanged,
       );
-
-  ///Select Room Button
-  ElevatedButton buildSelectRoomBtn(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressSelectRoom,
-      child: Text(
-        S.current.selectRoom,
-        style: Theme.of(context)
-            .textTheme
-            .labelMedium!
-            .copyWith(color: Theme.of(context).color.mainBackground),
-      ),
-    );
-  }
 
   ///Card Decoration
   BoxDecoration buildCardDecoration(BuildContext context) => BoxDecoration(

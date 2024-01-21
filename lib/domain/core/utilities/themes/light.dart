@@ -63,6 +63,7 @@ ThemeData hotelsExplorationLight = ThemeData(
       mainBackground: Color.fromRGBO(255, 255, 255, 1),
       cardBGColor: Color.fromRGBO(251, 251, 252, 1),
       errorColor: Colors.red,
+      avatarBGColor: Color.fromRGBO(246, 246, 249, 1),
     ),
   ],
 );

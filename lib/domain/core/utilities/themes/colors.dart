@@ -13,6 +13,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     required this.mainBackground,
     required this.cardBGColor,
     required this.errorColor,
+    required this.avatarBGColor,
   });
 
   final Color mainText;
@@ -23,8 +24,8 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
   final Color mainButton;
   final Color mainBackground;
   final Color cardBGColor;
-
   final Color errorColor;
+  final Color avatarBGColor;
 
   @override
   ThemeExtension<ThemeColors> lerp(
@@ -48,6 +49,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       mainBackground: Color.lerp(mainBackground, other.mainBackground, t)!,
       cardBGColor: Color.lerp(cardBGColor, other.cardBGColor, t)!,
       errorColor: Color.lerp(errorColor, other.errorColor, t)!,
+      avatarBGColor: Color.lerp(avatarBGColor, other.avatarBGColor, t)!,
     );
   }
 
