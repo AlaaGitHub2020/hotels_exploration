@@ -7,13 +7,16 @@ class HotelAddress extends StatelessWidget {
   const HotelAddress({super.key});
 
   @override
-  Widget build(BuildContext context) => Text(
-        'Madinat Makadi, Safaga Road, Makadi Bay, Египет',
-        overflow: TextOverflow.ellipsis,
-        softWrap: true,
-        style: Theme.of(context)
-            .textTheme
-            .titleLarge!
-            .copyWith(color: Theme.of(context).color.addressTextColor),
+  Widget build(BuildContext context) => TextButton(
+        onPressed: () => false,
+        child: Text(
+          'Madinat Makadi, Safaga Road, Makadi Bay, Египет',
+          overflow: TextOverflow.ellipsis,
+          softWrap: true,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(color: Theme.of(context).color.addressTextColor),
+        ),
       );
 }

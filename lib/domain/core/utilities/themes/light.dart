@@ -17,6 +17,14 @@ ThemeData hotelsExplorationLight = ThemeData(
           MaterialStateProperty.all(Color.fromRGBO(13, 114, 255, 1)),
     ),
   ),
+  textButtonTheme: TextButtonThemeData(
+    style: ButtonStyle(
+      padding: MaterialStateProperty.all(EdgeInsets.zero),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+      ),
+    ),
+  ),
   textTheme: TextTheme(
     titleLarge: TextStyle(
       fontWeight: FontWeight.w500,

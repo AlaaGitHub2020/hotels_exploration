@@ -20,14 +20,15 @@ class HotelData extends StatelessWidget {
             const RatingCard(),
             buildVerticalGap(),
             const HotelName(),
-            buildVerticalGap(),
             const HotelAddress(),
-            buildVerticalGap(),
+            buildSmallVerticalGap(),
             buildPrice(),
             buildVerticalGap(),
           ],
         ),
       );
+
+  SizedBox buildSmallVerticalGap() => const SizedBox(height: 5);
 
   SizedBox buildVerticalGap() => const SizedBox(height: 20);
 
