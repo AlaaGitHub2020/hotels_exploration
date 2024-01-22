@@ -24,6 +24,9 @@ class ViewsConstants {
   static const String icForward = 'assets/icons/ic_forward.svg';
   static const String icError = 'assets/icons/ic_error.svg';
   static const String icMoreDetails = 'assets/icons/ic_more_details.svg';
-  static const String icArrowBack= 'assets/icons/ic_arrow_back.svg';
-  static const String icOrderProcessed2= 'assets/icons/ic_order_processed.png';
+  static const String icArrowBack = 'assets/icons/ic_arrow_back.svg';
+  static const String icOrderProcessed = 'assets/icons/ic_order_processed.png';
+  static const String icAdd = 'assets/icons/ic_add.svg';
+  static const String icArrowDown = 'assets/icons/ic_arrow_down.svg';
+  static const String icArrowUp = 'assets/icons/ic_arrow_up.svg';
 }

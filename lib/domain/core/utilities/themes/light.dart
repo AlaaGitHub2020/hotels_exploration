@@ -51,6 +51,16 @@ ThemeData hotelsExplorationLight = ThemeData(
       fontSize: 16,
       fontFamily: 'SF-Pro-Display',
     ),
+    displayMedium: TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 17,
+      fontFamily: 'SF-Pro-Display',
+    ),
+    displaySmall: TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 14,
+      fontFamily: 'SF-Pro-Display',
+    ),
   ),
   extensions: const <ThemeExtension<dynamic>>[
     ThemeColors(
@@ -64,6 +74,8 @@ ThemeData hotelsExplorationLight = ThemeData(
       cardBGColor: Color.fromRGBO(251, 251, 252, 1),
       errorColor: Colors.red,
       avatarBGColor: Color.fromRGBO(246, 246, 249, 1),
+      inputLabelColor: Color.fromRGBO(169, 171, 183, 1),
+      inputTextColor: Color.fromRGBO(20, 20, 43, 1),
     ),
   ],
 );

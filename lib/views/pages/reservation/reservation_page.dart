@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hotels_exploration/domain/core/utilities/constants.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
-import 'package:hotels_exploration/views/pages/room/widgets/page_title.dart';
-import 'package:hotels_exploration/views/pages/room/widgets/room_page_body.dart';
+import 'package:hotels_exploration/views/pages/reservation/widgets/page_title.dart';
+import 'package:hotels_exploration/views/pages/reservation/widgets/reservation_page_body.dart';
 
-///Room Page
-class RoomPage extends StatelessWidget {
-  ///Contractor
-  const RoomPage({super.key});
+///Reservation Page
+class ReservationPage extends StatelessWidget {
+  ///Constructor
+  const ReservationPage({super.key});
 
   @override
   Widget build(BuildContext context) => SafeArea(
         child: Scaffold(
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           appBar: buildAppBar(context),
-          body: const RoomPageBody(),
+          body: const ReservationPageBody(),
         ),
       );
 
@@ -33,12 +33,4 @@ class RoomPage extends StatelessWidget {
           icon: SvgPicture.asset(ViewsConstants.icArrowBack),
         ),
       );
-
-  ///Card Decoration
-  BoxDecoration buildCardDecoration(BuildContext context) => BoxDecoration(
-      color: Theme.of(context).color.mainBackground,
-      borderRadius: buildBorder());
-
-  ///BorderRadius
-  BorderRadius buildBorder() => const BorderRadius.all(Radius.circular(15));
 }

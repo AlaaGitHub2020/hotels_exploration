@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hotels_exploration/views/pages/hotel/widgets/hotel_card/hotel_address.dart';
 import 'package:hotels_exploration/views/pages/hotel/widgets/hotel_card/hotel_name.dart';
+import 'package:hotels_exploration/views/pages/hotel/widgets/hotel_card/hotel_rating_card.dart';
 import 'package:hotels_exploration/views/pages/hotel/widgets/hotel_card/minimal_price.dart';
 import 'package:hotels_exploration/views/pages/hotel/widgets/hotel_card/price_for_it.dart';
-import 'package:hotels_exploration/views/pages/hotel/widgets/hotel_card/rating_card.dart';
 
 ///Hotel Data
 class HotelData extends StatelessWidget {
@@ -17,7 +17,7 @@ class HotelData extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             buildVerticalGap(),
-            const RatingCard(),
+            const HotelRatingCard(),
             buildVerticalGap(),
             const HotelName(),
             const HotelAddress(),

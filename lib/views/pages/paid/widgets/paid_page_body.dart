@@ -44,5 +44,5 @@ class PaidPageBody extends StatelessWidget {
   CircleAvatar buildAvatar(BuildContext context) => CircleAvatar(
       radius: 45,
       backgroundColor: Theme.of(context).color.avatarBGColor,
-      child: Image.asset(ViewsConstants.icOrderProcessed2));
+      child: Image.asset(ViewsConstants.icOrderProcessed));
 }
