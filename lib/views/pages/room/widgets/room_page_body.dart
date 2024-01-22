@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hotels_exploration/app_logic/reservation_ui_logic/reservation_ui_logic_bloc.dart';
 import 'package:hotels_exploration/app_logic/rooms_ui_logic/rooms_ui_logic_bloc.dart';
 import 'package:hotels_exploration/domain/models/models_failure.dart';
 import 'package:hotels_exploration/domain/models/room/room_model.dart';
@@ -76,6 +77,9 @@ class RoomPageBody extends StatelessWidget {
               .add(RoomsUiLogicEvent.imageSliderChanged(imageIndex));
         },
         onPressSelectRoom: () {
+          context
+              .read<ReservationUiLogicBloc>()
+              .add(const ReservationUiLogicEvent.getReservationData());
           context.router.push(ReservationRoute());
         },
       );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotels_exploration/generated/l10n.dart';
 
 ///Page Title
 class PageTitle extends StatelessWidget {
@@ -7,7 +8,7 @@ class PageTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Text(
-        'Бронирование',
+        S.current.booking,
         maxLines: 1,
         softWrap: true,
         overflow: TextOverflow.ellipsis,

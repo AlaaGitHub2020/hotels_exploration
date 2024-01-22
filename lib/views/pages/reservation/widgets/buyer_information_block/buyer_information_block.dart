@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
-import 'package:hotels_exploration/views/widgets/custom_input_field.dart';
+import 'package:hotels_exploration/generated/l10n.dart';
+import 'package:hotels_exploration/views/pages/reservation/widgets/buyer_information_block/email_field.dart';
+import 'package:hotels_exploration/views/pages/reservation/widgets/buyer_information_block/phone_field.dart';
 
 ///Buyer Information Block
 class BuyerInformationBlock extends StatelessWidget {
@@ -20,35 +22,33 @@ class BuyerInformationBlock extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 16),
-              Text('Информация о покупателе',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(color: Theme.of(context).color.mainText)),
+              buildBuyerInfoText(context),
               SizedBox(height: 20),
-              CustomInputField(
-                onChange: (_) {},
-                hint: 'Номер телефона',
-                initialValue: '+7 (951) 555-99-00',
-                keyboardType: TextInputType.phone,
-              ),
+              PhoneField(),
               SizedBox(height: 16),
-              CustomInputField(
-                onChange: (_) {},
-                hint: 'Почта',
-                initialValue: 'examplemail.000@mail.ru',
-                keyboardType: TextInputType.emailAddress,
-              ),
+              EmailField(),
               SizedBox(height: 16),
-              Text(
-                  'Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту',
-                  style: Theme.of(context).textTheme.displaySmall!.copyWith(
-                      color: Theme.of(context).color.priceForItTextColor)),
+              buildThisDataText(context),
               SizedBox(height: 16),
             ],
           ),
         ),
       );
+
+  ///build This Data Text
+  Text buildThisDataText(BuildContext context) => Text(S.current.thisData,
+      style: Theme.of(context)
+          .textTheme
+          .displaySmall!
+          .copyWith(color: Theme.of(context).color.priceForItTextColor));
+
+  ///build Buyer Info Text
+  Text buildBuyerInfoText(BuildContext context) =>
+      Text(S.current.buyerInformation,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(color: Theme.of(context).color.mainText));
 
   ///Card Decoration
   BoxDecoration buildCardDecoration(BuildContext context) => BoxDecoration(

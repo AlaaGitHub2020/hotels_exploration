@@ -1,13 +1,11 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
-import 'package:hotels_exploration/generated/l10n.dart';
-import 'package:hotels_exploration/views/routes/router.gr.dart';
+import 'package:hotels_exploration/views/pages/reservation/widgets/final_price_block/final_price_table.dart';
 
-///Pay Block
-class PayBlock extends StatelessWidget {
+///Final Price Block
+class FinalPriceBlock extends StatelessWidget {
   ///Constructor
-  const PayBlock({super.key});
+  const FinalPriceBlock({super.key});
 
   @override
   Widget build(BuildContext context) => Material(
@@ -22,14 +20,7 @@ class PayBlock extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {
-                  context.router.push(PaidRoute());
-                },
-                child: Text('${S.current.pay} 198 036 ₽',
-                    style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                        color: Theme.of(context).color.mainBackground)),
-              ),
+              FinalPriceTable(),
               SizedBox(height: 16),
             ],
           ),
@@ -42,8 +33,5 @@ class PayBlock extends StatelessWidget {
       borderRadius: buildBorder());
 
   ///BorderRadius
-  BorderRadius buildBorder() => const BorderRadius.only(
-        bottomLeft: Radius.circular(15),
-        bottomRight: Radius.circular(15),
-      );
+  BorderRadius buildBorder() => const BorderRadius.all(Radius.circular(15));
 }

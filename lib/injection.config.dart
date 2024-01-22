@@ -10,9 +10,11 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:hotels_exploration/app_logic/hotels_ui_logic/hotels_ui_logic_bloc.dart'
-    as _i12;
-import 'package:hotels_exploration/app_logic/rooms_ui_logic/rooms_ui_logic_bloc.dart'
+    as _i13;
+import 'package:hotels_exploration/app_logic/reservation_ui_logic/reservation_ui_logic_bloc.dart'
     as _i11;
+import 'package:hotels_exploration/app_logic/rooms_ui_logic/rooms_ui_logic_bloc.dart'
+    as _i12;
 import 'package:hotels_exploration/domain/api/i_api_repository.dart' as _i3;
 import 'package:hotels_exploration/domain/models/hotel/i_hotel_repository.dart'
     as _i5;
@@ -48,10 +50,12 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i8.ReservationRepository(gh<_i3.IAPIRepository>()));
     gh.lazySingleton<_i9.IRoomsRepository>(
         () => _i10.RoomsRepository(gh<_i3.IAPIRepository>()));
-    gh.factory<_i11.RoomsUiLogicBloc>(
-        () => _i11.RoomsUiLogicBloc(gh<_i9.IRoomsRepository>()));
-    gh.factory<_i12.HotelsUiLogicBloc>(
-        () => _i12.HotelsUiLogicBloc(gh<_i5.IHotelRepository>()));
+    gh.factory<_i11.ReservationUiLogicBloc>(
+        () => _i11.ReservationUiLogicBloc(gh<_i7.IReservationRepository>()));
+    gh.factory<_i12.RoomsUiLogicBloc>(
+        () => _i12.RoomsUiLogicBloc(gh<_i9.IRoomsRepository>()));
+    gh.factory<_i13.HotelsUiLogicBloc>(
+        () => _i13.HotelsUiLogicBloc(gh<_i5.IHotelRepository>()));
     return this;
   }
 }

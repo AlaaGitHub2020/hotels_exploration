@@ -29,4 +29,7 @@ class ViewsConstants {
   static const String icAdd = 'assets/icons/ic_add.svg';
   static const String icArrowDown = 'assets/icons/ic_arrow_down.svg';
   static const String icArrowUp = 'assets/icons/ic_arrow_up.svg';
+  static const String cPhoneNumber = '+7 (951) 555-99-00';
+  static const String cEmail = 'examplemail.000@mail.ru';
+  static const String cCurrency = '₽';
 }
