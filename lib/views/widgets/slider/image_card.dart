@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:hotels_exploration/views/widgets/loading.dart';
 import 'package:hotels_exploration/views/widgets/slider/loading_image_error.dart';
 
 ///Image Card
@@ -17,13 +19,14 @@ class ImageCard extends StatelessWidget {
         shape: buildBorder(),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15.0),
-          child: Image.network(
-            url,
+          child: CachedNetworkImage(
+            imageUrl: url,
             fit: BoxFit.cover,
             width: 343,
             height: 257,
-            errorBuilder: (context, error, stackTrace) =>
-                buildErrorWidget(context),
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                const Loading(),
+            errorWidget: (context, url, error) => buildErrorWidget(context),
           ),
         ),
       );

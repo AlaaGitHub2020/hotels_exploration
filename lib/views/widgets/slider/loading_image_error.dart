@@ -12,14 +12,15 @@ class LoadingImageError extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
-          Icon(Icons.error_outline, color: Theme.of(context).color.errorColor),
+          Icon(Icons.error_outline,
+              color: Theme.of(context).color.snackBarColor),
           const SizedBox(height: 10),
           Text(
             S.current.loadingImageError,
             style: Theme.of(context)
                 .textTheme
                 .labelSmall!
-                .copyWith(color: Theme.of(context).color.errorColor),
+                .copyWith(color: Theme.of(context).color.snackBarColor),
           ),
         ],
       );
