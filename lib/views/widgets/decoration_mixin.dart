@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotels_exploration/domain/core/utilities/constants.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
 import 'package:hotels_exploration/generated/l10n.dart';
 
@@ -52,5 +53,26 @@ mixin DecorationMixin {
     );
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  ///Number String formatter
+  String formatNumberString(String input) {
+    if (input.isEmpty) {
+      return '';
+    }
+
+    List<String> chunks = [];
+    int length = input.length;
+
+    for (int i = 0; i < length; i += 3) {
+      int end = i + 3;
+      if (end > length) {
+        end = length;
+      }
+      chunks.add(input.substring(length - end, length - i));
+    }
+
+    String formattedString = chunks.reversed.join(' ');
+    return '$formattedString ${ViewsConstants.cCurrency}';
   }
 }

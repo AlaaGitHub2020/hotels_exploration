@@ -4,9 +4,10 @@ import 'package:hotels_exploration/app_logic/hotels_ui_logic/hotels_ui_logic_blo
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
 import 'package:hotels_exploration/domain/models/hotel/hotel_model.dart';
 import 'package:hotels_exploration/generated/l10n.dart';
+import 'package:hotels_exploration/views/widgets/decoration_mixin.dart';
 
 ///Minimal Price
-class MinimalPrice extends StatelessWidget {
+class MinimalPrice extends StatelessWidget with DecorationMixin {
   ///Constructor
   const MinimalPrice({super.key});
 
@@ -17,7 +18,7 @@ class MinimalPrice extends StatelessWidget {
             hotelsUiLogicState.maybeWhen(
           orElse: Container.new,
           actionSuccess: (HotelModel hotelModel, _, __) => Text(
-              '${S.current.from} ${hotelModel.minimalPrice ?? ''}',
+              '${S.current.from} ${formatNumberString('${hotelModel.minimalPrice ?? ''}')}',
               overflow: TextOverflow.ellipsis,
               softWrap: true,
               style: Theme.of(context)

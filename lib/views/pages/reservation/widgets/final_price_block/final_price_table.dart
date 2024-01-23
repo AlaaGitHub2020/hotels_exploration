@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hotels_exploration/app_logic/reservation_ui_logic/reservation_ui_logic_bloc.dart';
-import 'package:hotels_exploration/domain/core/utilities/constants.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
 import 'package:hotels_exploration/domain/models/reservation/reservation_model.dart';
 import 'package:hotels_exploration/generated/l10n.dart';
+import 'package:hotels_exploration/views/widgets/decoration_mixin.dart';
 
 ///Final Price Table
-class FinalPriceTable extends StatelessWidget {
+class FinalPriceTable extends StatelessWidget with DecorationMixin {
   ///Constructor
   const FinalPriceTable({super.key});
 
@@ -24,17 +24,28 @@ class FinalPriceTable extends StatelessWidget {
                     (reservationModel.serviceCharge ?? 0);
                 return Table(
                   children: [
-                    buildTableRow(context, S.current.tour,
-                        '${reservationModel.tourPrice ?? ''} ${ViewsConstants.cCurrency}'),
+                    buildTableRow(
+                      context,
+                      S.current.tour,
+                      formatNumberString('${reservationModel.tourPrice ?? ''}'),
+                    ),
                     buildTableVerticalGap(),
-                    buildTableRow(context, S.current.fuelSurcharge,
-                        '${reservationModel.fuelCharge ?? ''} ${ViewsConstants.cCurrency}'),
+                    buildTableRow(
+                      context,
+                      S.current.fuelSurcharge,
+                      formatNumberString(
+                          '${reservationModel.fuelCharge ?? ''}'),
+                    ),
                     buildTableVerticalGap(),
-                    buildTableRow(context, S.current.serviceFee,
-                        '${reservationModel.serviceCharge ?? ''} ${ViewsConstants.cCurrency}'),
+                    buildTableRow(
+                      context,
+                      S.current.serviceFee,
+                      formatNumberString(
+                          '${reservationModel.serviceCharge ?? ''}'),
+                    ),
                     buildTableVerticalGap(),
                     buildTableRow(context, S.current.toPay,
-                        '$totalAmount ${ViewsConstants.cCurrency}',
+                        formatNumberString('$totalAmount'),
                         colored: true),
                   ],
                 );

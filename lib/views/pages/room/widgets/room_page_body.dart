@@ -10,11 +10,12 @@ import 'package:hotels_exploration/domain/models/room/rooms_list_model.dart';
 import 'package:hotels_exploration/generated/l10n.dart';
 import 'package:hotels_exploration/views/pages/room/widgets/room_card/room_card.dart';
 import 'package:hotels_exploration/views/routes/router.gr.dart';
+import 'package:hotels_exploration/views/widgets/decoration_mixin.dart';
 import 'package:hotels_exploration/views/widgets/failure_widget.dart';
 import 'package:hotels_exploration/views/widgets/loading.dart';
 
 ///Room Page Body
-class RoomPageBody extends StatelessWidget {
+class RoomPageBody extends StatelessWidget with DecorationMixin {
   ///Constructor
   const RoomPageBody({super.key});
 
@@ -69,7 +70,7 @@ class RoomPageBody extends StatelessWidget {
         imgList: roomModel?.imageUrls ?? [],
         roomName: roomModel?.name ?? '',
         roomPeculiarities: roomModel?.peculiarities ?? [],
-        roomPrice: '${roomModel?.price ?? ''}',
+        roomPrice: formatNumberString('${roomModel?.price ?? ''}'),
         roomPricePer: roomModel?.pricePer ?? '',
         onPageChanged: (int imageIndex, CarouselPageChangedReason reason) {
           context
