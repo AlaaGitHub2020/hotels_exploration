@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hotels_exploration/domain/core/utilities/constants.dart';
 import 'package:hotels_exploration/views/widgets/decoration_mixin.dart';
 
-///Arrow Down Icon
-class ArrowDownIcon extends StatelessWidget with DecorationMixin {
+///Arrow Icon
+class ArrowIcon extends StatelessWidget with DecorationMixin {
   ///Constructor
-  const ArrowDownIcon({super.key});
+  const ArrowIcon({required this.arrow, super.key});
+
+  ///arrow icon String
+  final String arrow;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -14,5 +16,5 @@ class ArrowDownIcon extends StatelessWidget with DecorationMixin {
       width: 32,
       padding: EdgeInsets.all(10),
       decoration: buildExpandedBtnDecoration(context),
-      child: SvgPicture.asset(ViewsConstants.icArrowDown));
+      child: SvgPicture.asset(arrow));
 }

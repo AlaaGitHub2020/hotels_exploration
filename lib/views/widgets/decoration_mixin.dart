@@ -17,6 +17,12 @@ mixin DecorationMixin {
   ///BorderRadius
   BorderRadius buildBorder() => const BorderRadius.all(Radius.circular(15));
 
+  ///Buttons Card Decoration
+  BoxDecoration buildDecoration(BuildContext context) => BoxDecoration(
+        color: Theme.of(context).color.cardBGColor,
+        borderRadius: const BorderRadius.all(Radius.circular(15)),
+      );
+
   ///convert To English Ordering <= 10
   /// Handling numbers outside the range 1-10
   String convertToEnglishOrdering(int number) {

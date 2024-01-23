@@ -1,8 +1,10 @@
 ///Constants used in the Domain layer
 class DomainConstants {
   static const String apiConfigFile = 'assets/config/api_config.yaml';
-  // static const String pEmailPattern =
-  //     r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+  static const String pPhonePattern =
+      r'^(\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}|8 \(\d{3}\) \d{3}-\d{2}-\d{2})$';
+  static const String pEmailPattern =
+      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
 }
 
 ///Constants used in the Infrastructure layer

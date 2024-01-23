@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
 import 'package:hotels_exploration/views/pages/room/widgets/room_card/room_details.dart';
 import 'package:hotels_exploration/views/pages/room/widgets/room_card/select_room_btn.dart';
+import 'package:hotels_exploration/views/widgets/custom_card.dart';
 
 ///Room Card
 class RoomCard extends StatelessWidget {
@@ -48,22 +48,16 @@ class RoomCard extends StatelessWidget {
   final Function()? onPressSelectRoom;
 
   @override
-  Widget build(BuildContext context) => Material(
-        elevation: 10,
-        borderRadius: buildBorder(),
-        child: Container(
-          width: MediaQuery.sizeOf(context).width,
-          decoration: buildCardDecoration(context),
-          child: Column(
-            children: [
-              const SizedBox(height: 20),
-              buildRoomDetails(),
-              const SizedBox(height: 10),
-              SelectRoomBtn(onPressSelectRoom: onPressSelectRoom),
-              const SizedBox(height: 20),
-            ],
-          ),
-        ),
+  Widget build(BuildContext context) => CustomCard(
+        padding: EdgeInsets.zero,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 20),
+          buildRoomDetails(),
+          const SizedBox(height: 10),
+          SelectRoomBtn(onPressSelectRoom: onPressSelectRoom),
+          const SizedBox(height: 20),
+        ],
       );
 
   ///Room Details
@@ -77,12 +71,4 @@ class RoomCard extends StatelessWidget {
         roomPeculiarities: roomPeculiarities,
         onPageChanged: onPageChanged,
       );
-
-  ///Card Decoration
-  BoxDecoration buildCardDecoration(BuildContext context) => BoxDecoration(
-      color: Theme.of(context).color.mainBackground,
-      borderRadius: buildBorder());
-
-  ///BorderRadius
-  BorderRadius buildBorder() => const BorderRadius.all(Radius.circular(15));
 }

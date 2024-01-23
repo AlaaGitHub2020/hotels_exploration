@@ -11,14 +11,17 @@ class HotelBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            const HotelCard(),
-            SizedBox(height: 10),
-            const AboutTheHotelCard(),
-            SizedBox(height: 8),
-            const ToSelectNumberCard(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.only(left: 8, right: 8),
+          child: Column(
+            children: [
+              const HotelCard(),
+              SizedBox(height: 10),
+              const AboutTheHotelCard(),
+              SizedBox(height: 8),
+              const ToSelectNumberCard(),
+            ],
+          ),
         ),
       );
 }

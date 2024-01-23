@@ -12,22 +12,18 @@ class PayBlock extends StatelessWidget with DecorationMixin {
   const PayBlock({super.key});
 
   @override
-  Widget build(BuildContext context) => Material(
-        elevation: 10,
-        borderRadius: buildBorder(),
-        child: Container(
-          padding: EdgeInsets.only(right: 16, left: 16),
-          width: MediaQuery.sizeOf(context).width,
-          decoration: buildCardDecoration(context),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              buildVerticalGap(),
-              buildPayBtn(),
-              buildVerticalGap(),
-            ],
-          ),
+  Widget build(BuildContext context) => Container(
+        color: Theme.of(context).color.mainBackground,
+        padding: EdgeInsets.only(right: 16, left: 16),
+        width: MediaQuery.sizeOf(context).width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            buildVerticalGap(),
+            buildPayBtn(),
+            buildVerticalGap(),
+          ],
         ),
       );
 
@@ -45,18 +41,5 @@ class PayBlock extends StatelessWidget with DecorationMixin {
             child: const PayAmountText(),
           );
         },
-      );
-
-  ///Card Decoration
-  @override
-  BoxDecoration buildCardDecoration(BuildContext context) => BoxDecoration(
-      color: Theme.of(context).color.mainBackground,
-      borderRadius: buildBorder());
-
-  ///BorderRadius
-  @override
-  BorderRadius buildBorder() => const BorderRadius.only(
-        bottomLeft: Radius.circular(15),
-        bottomRight: Radius.circular(15),
       );
 }

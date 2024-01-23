@@ -13,22 +13,25 @@ class ReservationPageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            buildVerticalGap(),
-            const HotelBlock(),
-            buildVerticalGap(),
-            const ReservationBlock(),
-            buildVerticalGap(),
-            const BuyerInformationBlock(),
-            buildVerticalGap(),
-            const TouristsInformationBlock(),
-            buildVerticalGap(),
-            const FinalPriceBlock(),
-            buildVerticalGap(),
-            const PayBlock(),
-            buildVerticalGap(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Column(
+            children: [
+              buildVerticalGap(),
+              const HotelBlock(),
+              buildVerticalGap(),
+              const ReservationBlock(),
+              buildVerticalGap(),
+              const BuyerInformationBlock(),
+              buildVerticalGap(),
+              const TouristsInformationBlock(),
+              buildVerticalGap(),
+              const FinalPriceBlock(),
+              buildVerticalGap(),
+              const PayBlock(),
+              buildVerticalGap(),
+            ],
+          ),
         ),
       );
 

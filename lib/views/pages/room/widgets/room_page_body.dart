@@ -48,7 +48,7 @@ class RoomPageBody extends StatelessWidget with DecorationMixin {
       ListView.builder(
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.only(top: 5, bottom: 5),
+        padding: EdgeInsets.all(8),
         itemCount: rooms.roomsList?.length ?? 0,
         itemBuilder: (BuildContext context, int index) {
           final RoomModel? roomModel = rooms.roomsList?.elementAt(index);

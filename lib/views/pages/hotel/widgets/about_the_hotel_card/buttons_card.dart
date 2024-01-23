@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
 import 'package:hotels_exploration/views/pages/hotel/widgets/about_the_hotel_card/facilities_btn.dart';
 import 'package:hotels_exploration/views/pages/hotel/widgets/about_the_hotel_card/whats_included_btn.dart';
 import 'package:hotels_exploration/views/pages/hotel/widgets/about_the_hotel_card/whats_not_included_btn.dart';
+import 'package:hotels_exploration/views/widgets/decoration_mixin.dart';
 
 ///Buttons Card
-class ButtonsCard extends StatelessWidget {
+class ButtonsCard extends StatelessWidget with DecorationMixin {
   ///Constructor
   const ButtonsCard({super.key});
 
@@ -22,12 +22,6 @@ class ButtonsCard extends StatelessWidget {
             const WhatsNotIncludedBtn(),
           ],
         ),
-      );
-
-  ///Buttons Card Decoration
-  BoxDecoration buildDecoration(BuildContext context) => BoxDecoration(
-        color: Theme.of(context).color.cardBGColor,
-        borderRadius: const BorderRadius.all(Radius.circular(15)),
       );
 
   Divider buildDivider() => const Divider(height: 1, endIndent: 15, indent: 50);

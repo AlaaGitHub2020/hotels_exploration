@@ -5,8 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hotels_exploration/app_logic/reservation_ui_logic/reservation_ui_logic_bloc.dart';
 import 'package:hotels_exploration/domain/core/utilities/constants.dart';
 import 'package:hotels_exploration/generated/l10n.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/arrow_down_icon.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/arrow_up_icon.dart';
+import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/arrow_icon.dart';
 import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/tourist_form.dart';
 import 'package:hotels_exploration/views/widgets/decoration_mixin.dart';
 
@@ -89,7 +88,9 @@ class TouristsInformationBlock extends StatelessWidget with DecorationMixin {
         decoration: buildCardDecoration(context),
         childrenPadding: EdgeInsets.only(bottom: 16, left: 16, right: 16),
         trailing: IconButton(
-          icon: isExpanded ? ArrowUpIcon() : ArrowDownIcon(),
+          icon: isExpanded
+              ? ArrowIcon(arrow: ViewsConstants.icArrowUp)
+              : ArrowIcon(arrow: ViewsConstants.icArrowDown),
           onPressed: () {
             context
                 .read<ReservationUiLogicBloc>()
