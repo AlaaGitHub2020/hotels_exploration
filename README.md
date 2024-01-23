@@ -2,15 +2,20 @@
 
 Hotels Exploration
 
-## Getting Started
+This Flutter application serves as a demonstrating my coding proficiency by offering a streamlined
+hotel exploration experience.
+Dive into the intricacies of programming with this compact yet powerful project..
 
-This project is a starting point for a Flutter application.
+To run the project, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1- Clone the repository.
+2- Execute the following commands in your terminal while respecting the specified order:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- flutter clean
+- flutter pub get
+- flutter pub run intl_utils:generate
+- flutter packages pub run build_runner build --delete-conflicting-outputs
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3- Run the project.
+
+
