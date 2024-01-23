@@ -12,6 +12,8 @@ class ReservationUiLogicState with _$ReservationUiLogicState {
   const factory ReservationUiLogicState.actionSuccess(
     ReservationModel reservationModel, {
     required List<TouristModel?> touristList,
+    required GlobalKey<FormState> buyerInfoFormKey,
+    required List<GlobalKey<FormState>> touristsInfoFormKey,
     @Default([]) List<GlobalKey<ExpansionTileCustomState>>? itemKeys,
     @Default([false]) List<bool>? isExpandedList,
     BuyerModel? buyerModel,

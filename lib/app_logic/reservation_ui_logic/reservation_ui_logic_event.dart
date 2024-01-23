@@ -20,4 +20,9 @@ class ReservationUiLogicEvent with _$ReservationUiLogicEvent {
 
   const factory ReservationUiLogicEvent.expandedBtnPressed(
       GlobalKey<ExpansionTileCustomState> expansionKey) = _ExpandedBtnPressed;
+
+  const factory ReservationUiLogicEvent.payBtnPressed(
+    BuildContext context, {
+    required Function onError,
+  }) = _PayBtnPressed;
 }

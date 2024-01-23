@@ -22,7 +22,6 @@ class ReservationPage extends StatelessWidget {
         child: Scaffold(
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           appBar: buildAppBar(context),
-          // body: const ReservationPageBody(),
           body: BlocBuilder<ReservationUiLogicBloc, ReservationUiLogicState>(
             builder: (_, ReservationUiLogicState reservationUiLogicState) {
               return reservationUiLogicState.maybeWhen(
@@ -34,7 +33,7 @@ class ReservationPage extends StatelessWidget {
                       fetchReservationDataFailure: (_) =>
                           S.current.errorFetchReservationDataFailure),
                 ),
-                actionSuccess: (_, __, ___, ____, _____) =>
+                actionSuccess: (_, __, ___, ____, _____, ______, _______) =>
                     const ReservationPageBody(),
               );
             },

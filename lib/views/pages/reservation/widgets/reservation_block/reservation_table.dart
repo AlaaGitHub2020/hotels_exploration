@@ -15,8 +15,8 @@ class ReservationTable extends StatelessWidget {
             ReservationUiLogicState reservationUiLogicState) {
           return reservationUiLogicState.maybeWhen(
             orElse: Container.new,
-            actionSuccess:
-                (ReservationModel reservationModel, _, __, ___, ____) {
+            actionSuccess: (ReservationModel reservationModel, _, __, ___, ____,
+                _____, ______) {
               return Table(
                 columnWidths: {1: FlexColumnWidth(1.7)},
                 children: [

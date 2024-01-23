@@ -4,18 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hotels_exploration/app_logic/reservation_ui_logic/reservation_ui_logic_bloc.dart';
 import 'package:hotels_exploration/domain/core/utilities/constants.dart';
-import 'package:hotels_exploration/domain/models/reservation/buyer_model.dart';
-import 'package:hotels_exploration/domain/models/reservation/reservation_model.dart';
-import 'package:hotels_exploration/domain/models/reservation/tourist_model.dart';
 import 'package:hotels_exploration/generated/l10n.dart';
 import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/arrow_down_icon.dart';
 import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/arrow_up_icon.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/citizenship_field.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/date_of_birth_field.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/family_name_field.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/name_field.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/passport_number_field.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/validity_period_passport_field.dart';
+import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/tourist_form.dart';
 import 'package:hotels_exploration/views/widgets/decoration_mixin.dart';
 
 class TouristsInformationBlock extends StatelessWidget with DecorationMixin {
@@ -36,11 +28,13 @@ class TouristsInformationBlock extends StatelessWidget with DecorationMixin {
         builder: (_, ReservationUiLogicState reservationUiLogicState) {
           return reservationUiLogicState.maybeWhen(
               orElse: Container.new,
-              actionSuccess: (ReservationModel reservationModel,
-                  List<TouristModel?>? touristModelList,
+              actionSuccess: (_,
+                  __,
+                  ___,
+                  ____,
                   List<GlobalKey<ExpansionTileCustomState>>? itemKeys,
                   List<bool>? isExpandedList,
-                  BuyerModel? buyerModel) {
+                  _____) {
                 return ExpansionTileGroup(
                   spaceBetweenItem: 10,
                   children: [
@@ -112,24 +106,6 @@ class TouristsInformationBlock extends StatelessWidget with DecorationMixin {
           context.read<ReservationUiLogicBloc>().add(
               ReservationUiLogicEvent.expansionChanged(expansionKey, expanded));
         },
-        children: [
-          Form(
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              child: Column(
-                children: [
-                  NameField(index: index),
-                  SizedBox(height: 8),
-                  FamilyNameField(index: index),
-                  SizedBox(height: 8),
-                  DateOfBirthField(index: index),
-                  SizedBox(height: 8),
-                  CitizenshipField(index: index),
-                  SizedBox(height: 8),
-                  PassportNumberField(index: index),
-                  SizedBox(height: 8),
-                  ValidityPeriodOfThePassportField(index: index),
-                ],
-              ))
-        ],
+        children: [TouristFrom(index: index)],
       );
 }

@@ -24,7 +24,8 @@ class _EmailFieldState extends State<EmailField> {
         builder: (_, ReservationUiLogicState reservationUiLogicState) {
           return reservationUiLogicState.maybeWhen(
               orElse: Container.new,
-              actionSuccess: (_, __, ___, ____, BuyerModel? buyerModel) {
+              actionSuccess:
+                  (_, __, ___, ____, _____, ______, BuyerModel? buyerModel) {
                 return CustomInputField(
                   onChange: (String value) {
                     final BuyerModel newBuyerModel =

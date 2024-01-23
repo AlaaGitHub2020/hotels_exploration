@@ -18,8 +18,8 @@ class PayAmountText extends StatelessWidget with DecorationMixin {
                 ReservationUiLogicState reservationUiLogicState) =>
             reservationUiLogicState.maybeWhen(
                 orElse: Container.new,
-                actionSuccess:
-                    (ReservationModel reservationModel, _, __, ___, ____) {
+                actionSuccess: (ReservationModel reservationModel, _, __, ___,
+                    ____, _____, ______) {
                   final int totalAmount = (reservationModel.tourPrice ?? 0) +
                       (reservationModel.fuelCharge ?? 0) +
                       (reservationModel.serviceCharge ?? 0);

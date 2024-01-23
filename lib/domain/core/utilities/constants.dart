@@ -37,4 +37,5 @@ class ViewsConstants {
   static const String cFamilyNameInitValue = 'Иванов';
   static const String cNameInitValue = 'Иван';
   static const String cDateMask = '##/##/####';
+  static const String cPhoneMask = '+7 (###) ###-##-##';
 }

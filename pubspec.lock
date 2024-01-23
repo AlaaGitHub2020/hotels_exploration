@@ -645,14 +645,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.0"
-  ru_phone_formatter:
-    dependency: "direct main"
-    description:
-      name: ru_phone_formatter
-      sha256: "0f5dd08b61cdb32810e5ff66ca4758df639f353fffb695378318c347692babaa"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
   shelf:
     dependency: transitive
     description:

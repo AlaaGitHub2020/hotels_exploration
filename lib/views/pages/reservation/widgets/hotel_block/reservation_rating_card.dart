@@ -16,8 +16,8 @@ class ReservationRatingCard extends StatelessWidget {
                 ReservationUiLogicState reservationUiLogicState) =>
             reservationUiLogicState.maybeWhen(
           orElse: Container.new,
-          actionSuccess: (ReservationModel reservationModel, _, __, ___,
-                  ____) =>
+          actionSuccess: (ReservationModel reservationModel, _, __, ___, ____,
+                  _____, ______) =>
               RatingCard(
                   ratingText:
                       '${reservationModel.hotelRating ?? ''} ${reservationModel.ratingName ?? ''}'),

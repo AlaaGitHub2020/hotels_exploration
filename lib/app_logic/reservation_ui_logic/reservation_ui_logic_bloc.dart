@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dartz/dartz.dart';
 import 'package:expansion_tile_group/expansion_tile_group.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,6 +10,7 @@ import 'package:hotels_exploration/domain/models/reservation/buyer_model.dart';
 import 'package:hotels_exploration/domain/models/reservation/i_reservation_repository.dart';
 import 'package:hotels_exploration/domain/models/reservation/reservation_model.dart';
 import 'package:hotels_exploration/domain/models/reservation/tourist_model.dart';
+import 'package:hotels_exploration/views/routes/router.gr.dart';
 import 'package:injectable/injectable.dart';
 
 part 'reservation_ui_logic_event.dart';
@@ -38,6 +40,8 @@ class ReservationUiLogicBloc
               },
               (ReservationModel reservationModel) {
                 return ReservationUiLogicState.actionSuccess(reservationModel,
+                    buyerInfoFormKey: GlobalKey<FormState>(),
+                    touristsInfoFormKey: [GlobalKey<FormState>()],
                     touristList: [TouristModel.empty]);
               },
             );
@@ -61,15 +65,21 @@ class ReservationUiLogicBloc
               ...currentState.isExpandedList ?? [false]
             ];
             List<TouristModel?> touristList = [...currentState.touristList];
+            List<GlobalKey<FormState>> touristsInfoFormKey = [
+              ...currentState.touristsInfoFormKey
+            ];
             if (itemKeys.length <= 8) {
               final newKey = GlobalKey<ExpansionTileCustomState>();
+              final newFormKey = GlobalKey<FormState>();
               itemKeys.add(newKey);
               isExpandedList.add(false);
               touristList.add(TouristModel.empty);
+              touristsInfoFormKey.add(newFormKey);
               emit(currentState.copyWith(
                 itemKeys: itemKeys,
                 isExpandedList: isExpandedList,
                 touristList: touristList,
+                touristsInfoFormKey: touristsInfoFormKey,
               ));
             } else {
               getLogger().e('Maximum is 10 no more ');
@@ -107,6 +117,26 @@ class ReservationUiLogicBloc
               ..insert(event.index, event.touristModel);
             emit(currentState.copyWith(touristList: updatedTouristList));
           },
+          payBtnPressed: (_PayBtnPressed event) {
+            getLogger().i('payBtnPressed Started');
+            _ActionSuccess currentState = state as _ActionSuccess;
+
+            bool allTouristsInfoFormKeysValid =
+                _areAllFormsValid(currentState.touristsInfoFormKey);
+
+            if (currentState.touristList.isNotEmpty &&
+                currentState.buyerModel != null &&
+                currentState.buyerModel!.phoneNumber.isValidPhone() &&
+                currentState.buyerModel!.emailAddress.isValidEmail() &&
+                (currentState.buyerInfoFormKey.currentState?.validate() ??
+                    false) &&
+                currentState.touristsInfoFormKey.isNotEmpty &&
+                allTouristsInfoFormKeysValid) {
+              event.context.router.push(PaidRoute());
+            } else {
+              event.onError.call();
+            }
+          },
         );
       },
     );
@@ -114,4 +144,15 @@ class ReservationUiLogicBloc
 
   ///Rooms Repository instance
   final IReservationRepository _iReservationRepository;
+
+  bool _areAllFormsValid(List<GlobalKey<FormState>> formKeys) {
+    for (var formKey in formKeys) {
+      var formState = formKey.currentState;
+
+      if (formState == null || !formState.validate()) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
