@@ -10,5 +10,10 @@ class ReservationUiLogicState with _$ReservationUiLogicState {
       _ActionFailure;
 
   const factory ReservationUiLogicState.actionSuccess(
-      ReservationModel reservationModel) = _ActionSuccess;
+    ReservationModel reservationModel, {
+    required List<TouristModel?> touristList,
+    @Default([]) List<GlobalKey<ExpansionTileCustomState>>? itemKeys,
+    @Default([false]) List<bool>? isExpandedList,
+    BuyerModel? buyerModel,
+  }) = _ActionSuccess;
 }

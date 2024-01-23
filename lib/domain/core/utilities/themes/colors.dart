@@ -16,6 +16,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     required this.avatarBGColor,
     required this.inputLabelColor,
     required this.inputTextColor,
+    required this.snackBarColor,
   });
 
   final Color mainText;
@@ -30,6 +31,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
   final Color avatarBGColor;
   final Color inputLabelColor;
   final Color inputTextColor;
+  final Color snackBarColor;
 
   @override
   ThemeExtension<ThemeColors> lerp(
@@ -56,6 +58,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       avatarBGColor: Color.lerp(avatarBGColor, other.avatarBGColor, t)!,
       inputLabelColor: Color.lerp(inputLabelColor, other.inputLabelColor, t)!,
       inputTextColor: Color.lerp(inputTextColor, other.inputTextColor, t)!,
+      snackBarColor: Color.lerp(snackBarColor, other.snackBarColor, t)!,
     );
   }
 

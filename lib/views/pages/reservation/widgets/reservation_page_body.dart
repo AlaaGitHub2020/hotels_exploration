@@ -4,7 +4,7 @@ import 'package:hotels_exploration/views/pages/reservation/widgets/final_price_b
 import 'package:hotels_exploration/views/pages/reservation/widgets/hotel_block/hotel_block.dart';
 import 'package:hotels_exploration/views/pages/reservation/widgets/pay_block/pay_block.dart';
 import 'package:hotels_exploration/views/pages/reservation/widgets/reservation_block/reservation_block.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block.dart';
+import 'package:hotels_exploration/views/pages/reservation/widgets/tourists_information_block/tourists_information_block.dart';
 
 ///Reservation Page Body
 class ReservationPageBody extends StatelessWidget {

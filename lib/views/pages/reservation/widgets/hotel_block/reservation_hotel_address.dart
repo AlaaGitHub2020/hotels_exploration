@@ -15,7 +15,9 @@ class ReservationHotelAddress extends StatelessWidget {
         builder: (_, ReservationUiLogicState reservationUiLogicState) =>
             reservationUiLogicState.maybeWhen(
           orElse: Container.new,
-          actionSuccess: (ReservationModel reservationModel) => TextButton(
+          actionSuccess:
+              (ReservationModel reservationModel, _, __, ___, ____) =>
+                  TextButton(
             onPressed: () => false,
             child: Text(
               reservationModel.hotelAddress ?? '',

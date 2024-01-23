@@ -1,6 +1,8 @@
 ///Constants used in the Domain layer
 class DomainConstants {
   static const String apiConfigFile = 'assets/config/api_config.yaml';
+  // static const String pEmailPattern =
+  //     r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 }
 
 ///Constants used in the Infrastructure layer
@@ -32,4 +34,7 @@ class ViewsConstants {
   static const String cPhoneNumber = '+7 (951) 555-99-00';
   static const String cEmail = 'examplemail.000@mail.ru';
   static const String cCurrency = '₽';
+  static const String cFamilyNameInitValue = 'Иванов';
+  static const String cNameInitValue = 'Иван';
+  static const String cDateMask = '##/##/####';
 }

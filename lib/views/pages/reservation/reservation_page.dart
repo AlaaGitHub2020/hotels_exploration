@@ -34,7 +34,8 @@ class ReservationPage extends StatelessWidget {
                       fetchReservationDataFailure: (_) =>
                           S.current.errorFetchReservationDataFailure),
                 ),
-                actionSuccess: (_) => const ReservationPageBody(),
+                actionSuccess: (_, __, ___, ____, _____) =>
+                    const ReservationPageBody(),
               );
             },
           ),

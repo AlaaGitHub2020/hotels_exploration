@@ -17,7 +17,8 @@ class FinalPriceTable extends StatelessWidget {
         builder: (_, ReservationUiLogicState reservationUiLogicState) {
           return reservationUiLogicState.maybeWhen(
               orElse: Container.new,
-              actionSuccess: (ReservationModel reservationModel) {
+              actionSuccess:
+                  (ReservationModel reservationModel, _, __, ___, ____) {
                 final int totalAmount = (reservationModel.tourPrice ?? 0) +
                     (reservationModel.fuelCharge ?? 0) +
                     (reservationModel.serviceCharge ?? 0);

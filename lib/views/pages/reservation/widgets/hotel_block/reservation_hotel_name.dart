@@ -14,7 +14,8 @@ class ReservationHotelName extends StatelessWidget {
         builder: (_, ReservationUiLogicState reservationUiLogicState) =>
             reservationUiLogicState.maybeWhen(
           orElse: Container.new,
-          actionSuccess: (ReservationModel reservationModel) => Text(
+          actionSuccess:
+              (ReservationModel reservationModel, _, __, ___, ____) => Text(
             reservationModel.hotelName ?? '',
             overflow: TextOverflow.ellipsis,
             softWrap: true,

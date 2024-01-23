@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
 
 /// Custom input Field widget
@@ -11,6 +12,9 @@ class CustomInputField extends StatefulWidget {
     this.autofocus = false,
     this.initialValue,
     this.validator,
+    this.hasValidationError = false,
+    this.inputFormatters,
+    this.maxLength,
     super.key,
   });
 
@@ -31,6 +35,15 @@ class CustomInputField extends StatefulWidget {
 
   /// Input validator function
   final FormFieldValidator<String?>? validator;
+
+  ///hasValidationError flag toa make the container with bigger height
+  final bool? hasValidationError;
+
+  ///input Formatters
+  final List<TextInputFormatter>? inputFormatters;
+
+  ///maxLength
+  final int? maxLength;
 
   @override
   State<CustomInputField> createState() => _CustomInputFieldState();
@@ -56,8 +69,8 @@ class _CustomInputFieldState extends State<CustomInputField> {
 
   @override
   Widget build(BuildContext context) => Container(
-        height: 52,
-        padding: EdgeInsets.only(top: 10, bottom: 10),
+        height: (widget.hasValidationError ?? false) ? 90 : 52,
+        padding: const EdgeInsets.only(top: 10, bottom: 10),
         decoration: BoxDecoration(
             color: Theme.of(context).color.avatarBGColor,
             borderRadius: BorderRadius.only(
@@ -76,10 +89,12 @@ class _CustomInputFieldState extends State<CustomInputField> {
           style: Theme.of(context).textTheme.labelSmall!.copyWith(
                 color: Theme.of(context).color.inputTextColor,
               ),
+          maxLength: widget.maxLength,
           keyboardType: widget.keyboardType,
           autofocus: widget.autofocus,
           controller: controller,
           onChanged: widget.onChange,
+          inputFormatters: widget.inputFormatters,
         ),
       );
 
@@ -91,6 +106,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
         labelStyle: Theme.of(context).textTheme.displayMedium!.copyWith(
               color: Theme.of(context).color.inputLabelColor,
             ),
+        counterText: '',
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide(

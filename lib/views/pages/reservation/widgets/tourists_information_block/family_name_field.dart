@@ -2,20 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hotels_exploration/app_logic/reservation_ui_logic/reservation_ui_logic_bloc.dart';
 import 'package:hotels_exploration/domain/core/utilities/constants.dart';
-import 'package:hotels_exploration/domain/models/reservation/buyer_model.dart';
+import 'package:hotels_exploration/domain/models/reservation/tourist_model.dart';
 import 'package:hotels_exploration/generated/l10n.dart';
 import 'package:hotels_exploration/views/widgets/custom_input_field.dart';
 
-///Email Field
-class EmailField extends StatefulWidget {
+///Family Name Field
+class FamilyNameField extends StatefulWidget {
   ///Constructor
-  const EmailField({super.key});
+  const FamilyNameField({required this.index, super.key});
+
+  ///tourist index
+  final int index;
 
   @override
-  State<EmailField> createState() => _EmailFieldState();
+  State<FamilyNameField> createState() => _FamilyNameFieldState();
 }
 
-class _EmailFieldState extends State<EmailField> {
+class _FamilyNameFieldState extends State<FamilyNameField> {
   bool hasValidationError = false;
 
   @override
@@ -24,29 +27,29 @@ class _EmailFieldState extends State<EmailField> {
         builder: (_, ReservationUiLogicState reservationUiLogicState) {
           return reservationUiLogicState.maybeWhen(
               orElse: Container.new,
-              actionSuccess: (_, __, ___, ____, BuyerModel? buyerModel) {
+              actionSuccess:
+                  (_, List<TouristModel?> touristList, __, ___, ____) {
                 return CustomInputField(
                   onChange: (String value) {
-                    final BuyerModel newBuyerModel =
-                        buyerModel?.copyWith(emailAddress: value) ??
-                            BuyerModel.empty.copyWith(emailAddress: value);
+                    TouristModel touristModel =
+                        touristList[widget.index]!.copyWith(secondName: value);
+
                     context.read<ReservationUiLogicBloc>().add(
-                        ReservationUiLogicEvent.buyerInformationFormChanged(
-                            newBuyerModel));
+                          ReservationUiLogicEvent.touristFormChanged(
+                              touristModel, widget.index),
+                        );
                   },
-                  hint: S.current.email,
-                  initialValue: ViewsConstants.cEmail,
-                  keyboardType: TextInputType.emailAddress,
-                  hasValidationError: hasValidationError,
+                  hint: S.current.familyName,
+                  initialValue: ViewsConstants.cFamilyNameInitValue,
+                  keyboardType: TextInputType.text,
                   maxLength: 50,
+                  hasValidationError: hasValidationError,
                   validator: (String? value) {
-                    if (value == null ||
-                        value.isEmpty ||
-                        !value.isValidEmail()) {
+                    if (value == null || value.isEmpty) {
                       setState(() {
                         hasValidationError = true;
                       });
-                      return S.current.invalidEmail;
+                      return S.current.required;
                     } else {
                       setState(() {
                         hasValidationError = false;

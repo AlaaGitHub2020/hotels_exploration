@@ -7,15 +7,12 @@ ThemeData hotelsExplorationLight = ThemeData(
   scaffoldBackgroundColor: const Color(0xFFD9D9D9),
   fontFamily: 'SF-Pro-Display',
   elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ButtonStyle(
-      elevation: MaterialStateProperty.all(0),
-      shape: MaterialStateProperty.all(
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      ),
-      minimumSize: MaterialStateProperty.all(Size(343, 48)),
-      backgroundColor:
-          MaterialStateProperty.all(Color.fromRGBO(13, 114, 255, 1)),
-    ),
+    style: ElevatedButton.styleFrom(
+        backgroundColor: Color.fromRGBO(13, 114, 255, 1),
+        disabledBackgroundColor: Color.fromRGBO(130, 135, 150, 1),
+        elevation: 0,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        minimumSize: Size(343, 48)),
   ),
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
@@ -72,10 +69,11 @@ ThemeData hotelsExplorationLight = ThemeData(
       mainButton: Color.fromRGBO(13, 114, 255, 1),
       mainBackground: Color.fromRGBO(255, 255, 255, 1),
       cardBGColor: Color.fromRGBO(251, 251, 252, 1),
-      errorColor: Colors.red,
+      errorColor: Color.fromRGBO(235, 87, 87, 0.15),
       avatarBGColor: Color.fromRGBO(246, 246, 249, 1),
       inputLabelColor: Color.fromRGBO(169, 171, 183, 1),
       inputTextColor: Color.fromRGBO(20, 20, 43, 1),
+      snackBarColor: Colors.red,
     ),
   ],
 );

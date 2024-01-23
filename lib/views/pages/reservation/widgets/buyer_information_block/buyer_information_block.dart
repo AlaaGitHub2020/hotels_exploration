@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
 import 'package:hotels_exploration/generated/l10n.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/buyer_information_block/email_field.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/buyer_information_block/phone_field.dart';
+import 'package:hotels_exploration/views/pages/reservation/widgets/buyer_information_block/buyer_form.dart';
 
 ///Buyer Information Block
 class BuyerInformationBlock extends StatelessWidget {
@@ -23,11 +22,7 @@ class BuyerInformationBlock extends StatelessWidget {
             children: [
               SizedBox(height: 16),
               buildBuyerInfoText(context),
-              SizedBox(height: 20),
-              PhoneField(),
-              SizedBox(height: 16),
-              EmailField(),
-              SizedBox(height: 16),
+              BuyerForm(),
               buildThisDataText(context),
               SizedBox(height: 16),
             ],
