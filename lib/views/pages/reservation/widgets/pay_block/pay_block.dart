@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hotels_exploration/app_logic/reservation_ui_logic/reservation_ui_logic_bloc.dart';
 import 'package:hotels_exploration/domain/core/utilities/themes/theme_data_extension.dart';
 import 'package:hotels_exploration/generated/l10n.dart';
-import 'package:hotels_exploration/views/pages/reservation/widgets/pay_block/pay_aAmount_text.dart';
+import 'package:hotels_exploration/views/pages/reservation/widgets/pay_block/pay_amount_text.dart';
 import 'package:hotels_exploration/views/widgets/decoration_mixin.dart';
 
 ///Pay Block
